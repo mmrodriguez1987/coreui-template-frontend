@@ -1,0 +1,32 @@
+# Local tooling and generated artifacts
+.DS_Store
+__pycache__/
+*.py[cod]
+.venv/
+node_modules/
+dist/
+coverage/
+*.log
+
+# Private inputs must never enter this repository
+.env
+.env.*
+.npmrc
+*.pem
+*.key
+*.p12
+*.zip
+*.tgz
+*.tar
+*.tar.gz
+licensed-template/
+private/
+.local/
+
+# Agent installations and sessions are not distribution source
+.agents/
+.claude/
+.codex/
+.cursor/
+.windsurf/
+skills-lock.json
