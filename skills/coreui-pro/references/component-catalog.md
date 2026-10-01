@@ -60,7 +60,7 @@ Before building anything by hand, find it here. Style rules live in
 | CMultiSelect **PRO** | Choosing many (or one, `:multiple="false"`) from options | No v-model: preselect with `value` or `selected: true` on options, read `@change(selectedOptions)`; `selection-type="tags" \| "counter" \| "text"`, option groups, `search`, `select-all`, `virtual-scroller`, `loading`, `allow-create-options` |
 | CChipInput **PRO** | Free-form tags, emails, keywords | `v-model` (array), `separator`, `max-chips`, `chip-class-name`, `create-on-blur` |
 | CDatePicker / CDateRangePicker / CTimePicker **PRO** | Every date or time | Mandatory; see [date-time.md](date-time.md) |
-| CPasswordInput **PRO** | Passwords with show/hide | `v-model`, `label`, `floating-label`, feedback props |
+| CPasswordInput **PRO** | Passwords with show/hide | `v-model`, `label`, `floating-label`, `invalid`; in 5.21.1 its `feedback-invalid` text renders outside the input wrapper and stays hidden — render `div.invalid-feedback.d-block` yourself |
 | COneTimePassword + COneTimePasswordInput **PRO** | 2FA codes | `v-model`, `@complete`; one input child per digit |
 | CRangeSlider **PRO** | Price ranges, thresholds, multi-handle | `v-model` (number or array), `labels`, `distance`, `step`, `vertical`, `tooltips-format` |
 | CRating **PRO** | Reviews, satisfaction, priority | `v-model`, `precision`, `item-count`, `tooltips` array, `read-only`, custom icon slots |
@@ -120,8 +120,9 @@ stacked, horizontal and area variants are Chart.js options. Full guidance in
 | Two-factor authentication | COneTimePassword with six inputs, auto-submit on complete |
 | 404 / 500 | Large number heading, message, search CInputGroup with icon prefix |
 
-Background `bg-body-tertiary min-vh-100 d-flex align-items-center`. UI only — wire
-real authentication from the target backend ([authentication.md](authentication.md)).
+Background `bg-body-tertiary min-vh-100 d-flex align-items-center`. Exact frames, per-screen
+anatomy and flows are in [authentication.md](authentication.md); the screens are UI only
+until wired to the backend.
 
 ## Plugins
 

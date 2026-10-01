@@ -2,6 +2,8 @@
 
 ## 1.3.0 — 2026-09-30
 
+- Document authentication and error pages: the two template frames, per-screen
+  anatomy, flows and routing; add an original functional [login example](skills/coreui-pro/examples/login-page.md).
 - Add [visual design](skills/coreui-pro/references/visual-design.md): shell geometry,
   spacing rhythm, cards, typography, gradients, icons, flat sidebar and dark-mode parity
   of the CoreUI Pro Vue Admin Template 5.9.0.

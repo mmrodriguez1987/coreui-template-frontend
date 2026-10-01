@@ -120,12 +120,12 @@ set; add references only when the implementation needs them.
 | Table, filters, or search | [list views](references/list-views.md), [personalized CRUD](references/custom-crud.md), [tables](references/tables.md); [navigation](references/navigation.md) for header search |
 | Modal, toast, tabs, or other UI primitive | [components](references/components.md) |
 | Theme or responsive styling | [visual design](references/visual-design.md), [styling](references/styling.md), [layouts](references/layouts.md) |
-| Authentication screens | [authentication](references/authentication.md), [forms](references/forms.md), [routing](references/routing.md) |
+| Authentication or error pages (login, register, reset, 2FA, 404) | [authentication](references/authentication.md), [visual design](references/visual-design.md), [forms](references/forms.md), [routing](references/routing.md) |
 | Integration review | [best practices](references/best-practices.md) |
 | Broken behavior | [troubleshooting](references/troubleshooting.md) |
 | Historical inspection evidence | [template baseline](references/template-baseline.md) |
 
-Original worked examples: [CRUD](examples/crud-page.md), [main list](examples/list-page.md),
+Original worked examples: [CRUD](examples/crud-page.md), [main list](examples/list-page.md), [login](examples/login-page.md),
 [dashboard with every chart type](examples/dashboard-page.md), [form](examples/form-page.md),
 [table](examples/table-page.md), [modal](examples/modal-example.md).
 They illustrate decisions and small Vue components; adapt their contracts to the target.

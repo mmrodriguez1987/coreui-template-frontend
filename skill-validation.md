@@ -37,7 +37,7 @@ Use a licensed Vue app that already has @vue/compiler-sfc installed:
 node tests/compile-examples.mjs /path/to/licensed-vue-app
 ```
 
-This parses and compiles the seven original Vue code blocks, including template and
+This parses and compiles the eight original Vue code blocks, including template and
 style syntax, without copying any dependencies or emitting licensed bundles. It does
 not resolve every import, type-check component props, call APIs or render a browser.
 Materialize the examples only in a private licensed consumer app, supply their documented
@@ -81,13 +81,13 @@ checks and review history before a future release.
 ## 1.1 validation scope
 
 The personalized CRUD revision adds one reference and keeps the former local CRUD as
-an alternative, for seven original SFC examples. Validate with the same commands above.
+an alternative, for eight original SFC examples. Validate with the same commands above.
 The private application inspection used source and installed component code; it did
 not run the application or change its files. Public examples use synthetic customer
 content and normalized adapters, not copied private product code.
 
 Revision checks passed: metadata/links/resource discovery, skill-creator quick validation,
-all seven validator tests, and compilation of all seven Vue SFC blocks using the inspected
+all seven validator tests, and compilation of all eight Vue SFC blocks using the inspected
 Laravel/Vue application's compiler. A separate 12-line normalized overlap scan against
 its frontend and PHP application sources found no matches in the public skill Markdown.
 No browser or real-backend execution is claimed for this revision.
