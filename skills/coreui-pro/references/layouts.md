@@ -1,5 +1,7 @@
 # Layout composition and responsive behavior
 
+Shell dimensions and spacing rhythm of the template: [visual-design.md](visual-design.md).
+
 The admin shell owns sidebar, sticky header, breadcrumb, footer, aside, and the
 container around its router outlet. Page components own feature headings and content.
 Do not insert a second AppHeader, AppSidebar, AppBreadcrumb or full-height wrapper

@@ -28,5 +28,5 @@ for (const file of readdirSync(exampleDir).filter((file) => file.endsWith('.md')
     checked++
   }
 }
-if (checked !== 6) throw new Error(`Expected six SFC examples, found ${checked}`)
+if (checked !== 8) throw new Error(`Expected eight SFC examples, found ${checked}`)
 console.log(`PASS: ${checked} original Vue SFC blocks parse and compile (syntax only; no runtime claim)`)

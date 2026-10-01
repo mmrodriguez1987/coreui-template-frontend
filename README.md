@@ -4,7 +4,7 @@
 
 An independent, open-source Agent Skill for coding agents working on CoreUI Pro Vue applications. It teaches agents to inspect the project, reuse its components and services, and build consistent business screens with native CoreUI primitives.
 
-The goal is practical frontend architecture: custom CRUD interfaces, coherent search and filters, dashboards, forms, navigation, and responsive layouts that belong in your application.
+The goal is practical frontend architecture with the visual quality of the CoreUI Pro admin template: custom CRUD interfaces, coherent search and filters, dashboards, forms, navigation, and responsive layouts that belong in your application.
 
 [Explore the skill](skills/coreui-pro/SKILL.md) · [Custom CRUD example](skills/coreui-pro/examples/crud-page.md) · [Contributing](CONTRIBUTING.md) · [Changelog](CHANGELOG.md)
 
@@ -37,7 +37,7 @@ See the [personalized CRUD guide](skills/coreui-pro/references/custom-crud.md) a
 
 ## Supported framework and scope
 
-**Version 1.1.0 focuses on Vue 3 and CoreUI Vue Pro 5.** Its guidance comes from inspection of a licensed Vue template and a customized Laravel/Vue application. The public instructions and examples are original.
+**Version 1.3.0 focuses on Vue 3 and CoreUI Vue Pro 5.** Its guidance comes from inspection of a licensed Vue template and a customized Laravel/Vue application. The public instructions and examples are original.
 
 | Inspected template | Version or architecture |
 | --- | --- |
@@ -136,10 +136,12 @@ The agent loads only references relevant to the task. A menu change primarily ne
 | Example | Purpose |
 | --- | --- |
 | [Personalized CRUD](skills/coreui-pro/examples/crud-page.md) | Custom toolbar, remote results, modal workflows and request coordination |
-| [Dashboard](skills/coreui-pro/examples/dashboard-page.md) | Native widgets, chart integration and responsive composition |
+| [Dashboard](skills/coreui-pro/examples/dashboard-page.md) | Template dashboard blueprint: gradient KPI widgets, range picker, every chart type, progress groups, detail table |
 | [Form](skills/coreui-pro/examples/form-page.md) | Editable draft, validation and an explicit save contract |
 | [Local table](skills/coreui-pro/examples/table-page.md) | Built-in filtering and pagination for a complete local collection |
 | [Delete modal](skills/coreui-pro/examples/modal-example.md) | Confirmation, stable record identity and error recovery |
+| [Main list](skills/coreui-pro/examples/list-page.md) | Toolbar filters, stock chips, sort, grid/table switch and server totals |
+| [Login](skills/coreui-pro/examples/login-page.md) | Template auth frame with bound fields, errors, pending state and safe redirect |
 | [Minimal local CRUD](skills/coreui-pro/examples/local-crud-page.md) | Smaller alternative for explicitly local datasets |
 
 Examples use synthetic content and documented adapter contracts. Connect them to your application's actual services; they do not supply persistence or authentication.
@@ -181,7 +183,7 @@ python3 -m venv .venv
 
 The validator checks metadata, local links, resource reachability, license consistency and common publication hazards. Optional checks compare against local licensed source and compile the original examples using a consuming application's Vue compiler.
 
-For version 1.1, metadata/package checks, seven validator tests and compilation of all six Vue examples passed. Browser interactions, real backend integration and live-agent scenarios remain separate checks to run in a private consumer application.
+For version 1.3, metadata/package checks, seven validator tests and compilation of all eight Vue examples passed. Browser interactions, real backend integration and live-agent scenarios remain separate checks to run in a private consumer application.
 
 See [validation instructions and results](skill-validation.md) and the [behavioral scenario suite](tests/scenarios.md). Heuristic content checks do not replace manual review of publication files and history.
 

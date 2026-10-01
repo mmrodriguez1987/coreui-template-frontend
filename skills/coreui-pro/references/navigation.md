@@ -17,7 +17,9 @@ Original internal item, assuming the corresponding route exists:
 }
 ```
 
-Use `CNavGroup` with `items` for a real hierarchy; use `CNavTitle` for a section label.
+Use `CNavGroup` with `items` only for a real family of four or more pages; use `CNavTitle`
+for a section label and keep primary destinations top-level with an icon. Group children
+carry no icon (the renderer draws a bullet). See [visual-design.md](visual-design.md#navigation-density-fewer-collapsibles).
 Match existing translation functions and add new keys to supported locale files when
 needed. Do not export template translations. Confirm icons are both imported and
 included in `src/assets/icons/index.js`; an installed icon package alone does not

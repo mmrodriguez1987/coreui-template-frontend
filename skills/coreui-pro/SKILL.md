@@ -3,11 +3,13 @@ name: coreui-pro
 description: >
   Build and extend CoreUI Pro Vue frontends using the application's existing
   architecture and native components. Use for CoreUI Pro pages, dashboards,
-  CRUD, forms, tables, modals, search, navigation, routes, charts, and styling,
-  or an explicitly requested migration to CoreUI Pro.
+  CRUD, lists, forms, date/time pickers, tables, modals, search, navigation,
+  routes, dashboards, charts, widgets, plugins, apps and styling, reproducing the
+  visual quality of the CoreUI Pro admin template, or an explicitly requested
+  migration to CoreUI Pro.
 license: MIT
 metadata:
-  version: "1.1.0"
+  version: "1.3.0"
   framework: "vue"
 ---
 
@@ -70,6 +72,33 @@ For business CRUD, prefer a personalized screen consistent with sibling modules:
 a dedicated search/filter toolbar, domain-specific cells/cards and modal workflows.
 Compose CoreUI primitives to achieve it; do not default to a stock CSmartTable search
 bar or generic scaffold. Read [personalized CRUD](references/custom-crud.md) first.
+For main lists (products, stock, customers, orders) follow the screen anatomy in
+[list views](references/list-views.md): toolbar card with search, category/status/stock
+filters, sort and reset, a result count with grid/table switch, and server paging.
+
+## Visual fidelity contract (always)
+
+Everything built with CoreUI must look like the licensed CoreUI Pro Vue Admin Template
+unless the target already has a different established design. Read
+[visual design](references/visual-design.md) before any UI work and apply it:
+
+- Page sections are cards with `mb-4`; widget/card rows use `:xs="{ gutter: 4 }"`;
+  pages add no outer container or padding (the shell's `CContainer lg px-4` does).
+- Card headers: bold title plus muted small context; values `fs-5 fw-semibold`,
+  labels `text-body-secondary small`; theme colors only through props and `--cui-*`.
+- Icons from CoreUI Icons (`cil-*`, `cib-*`, `cif-*`), registered in the app icon set,
+  sized as the template does; icon-only buttons have accessible names.
+- **Dates and times always use CDatePicker (with `timepicker` for date-time),
+  CDateRangePicker or CTimePicker — never native date/time inputs.** See
+  [date and time](references/date-time.md).
+- Prefer the Pro control for every need (CMultiSelect, CAutocomplete, CChipInput,
+  CRating, CRangeSlider, CStepper, CLoadingButton, CSmartTable, widgets); check the
+  [component catalog](references/component-catalog.md) before hand-building anything.
+- Dashboards follow the template blueprint and use the full range of chart types the
+  data supports ([dashboards](references/dashboards.md), [charts](references/charts.md)).
+- Sidebar stays mostly flat: section titles, top-level items with icons, groups only
+  for families of four or more pages, children without icons.
+- Verify light and dark mode.
 
 ## Load only the relevant documents
 
@@ -78,21 +107,26 @@ set; add references only when the implementation needs them.
 
 | Task | Read |
 | --- | --- |
+| Any visual work (always) | [visual design](references/visual-design.md), [component catalog](references/component-catalog.md) |
 | Understand a project or add a page | [architecture](references/architecture.md), [layouts](references/layouts.md), [routing](references/routing.md) |
-| Add a menu item | [navigation](references/navigation.md), [routing](references/routing.md) |
+| Add a menu item | [navigation](references/navigation.md), [routing](references/routing.md), [visual design](references/visual-design.md#navigation-density-fewer-collapsibles) |
+| Main module list (catalog, stock, filters, grid/table) | [list views](references/list-views.md), [personalized CRUD](references/custom-crud.md), [tables](references/tables.md), [components](references/components.md) |
 | Personalized business CRUD | [personalized CRUD](references/custom-crud.md), [architecture](references/architecture.md), [components](references/components.md), [forms](references/forms.md), [tables](references/tables.md), [layouts](references/layouts.md); routing/navigation if exposed in the menu |
-| Dashboard | [dashboards](references/dashboards.md), [charts](references/charts.md), [layouts](references/layouts.md), [components](references/components.md) |
-| Form or validation | [forms](references/forms.md) |
-| Table, filters, or search | [personalized CRUD](references/custom-crud.md), [tables](references/tables.md); [navigation](references/navigation.md) for header search |
+| Dashboard | [dashboards](references/dashboards.md), [charts](references/charts.md), [visual design](references/visual-design.md), [date and time](references/date-time.md), [component catalog](references/component-catalog.md) |
+| Charts or widgets | [charts](references/charts.md), [component catalog](references/component-catalog.md) |
+| Date, time or range field | [date and time](references/date-time.md), [forms](references/forms.md) |
+| Plugins (FullCalendar) or apps (invoice, inbox) | [component catalog](references/component-catalog.md), [visual design](references/visual-design.md) |
+| Form or validation | [forms](references/forms.md), [date and time](references/date-time.md), [component catalog](references/component-catalog.md) |
+| Table, filters, or search | [list views](references/list-views.md), [personalized CRUD](references/custom-crud.md), [tables](references/tables.md); [navigation](references/navigation.md) for header search |
 | Modal, toast, tabs, or other UI primitive | [components](references/components.md) |
-| Theme or responsive styling | [styling](references/styling.md), [layouts](references/layouts.md) |
-| Authentication screens | [authentication](references/authentication.md), [forms](references/forms.md), [routing](references/routing.md) |
+| Theme or responsive styling | [visual design](references/visual-design.md), [styling](references/styling.md), [layouts](references/layouts.md) |
+| Authentication or error pages (login, register, reset, 2FA, 404) | [authentication](references/authentication.md), [visual design](references/visual-design.md), [forms](references/forms.md), [routing](references/routing.md) |
 | Integration review | [best practices](references/best-practices.md) |
 | Broken behavior | [troubleshooting](references/troubleshooting.md) |
 | Historical inspection evidence | [template baseline](references/template-baseline.md) |
 
-Original worked examples: [CRUD](examples/crud-page.md),
-[dashboard](examples/dashboard-page.md), [form](examples/form-page.md),
+Original worked examples: [CRUD](examples/crud-page.md), [main list](examples/list-page.md), [login](examples/login-page.md),
+[dashboard with every chart type](examples/dashboard-page.md), [form](examples/form-page.md),
 [table](examples/table-page.md), [modal](examples/modal-example.md).
 They illustrate decisions and small Vue components; adapt their contracts to the target.
 

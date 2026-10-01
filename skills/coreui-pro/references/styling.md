@@ -1,5 +1,8 @@
 # Theme and styling integration
 
+The visual target (spacing, cards, typography, gradients, icons, sidebar density) is
+described in [visual-design.md](visual-design.md); this file covers the mechanics.
+
 The baseline App.vue imports `src/styles/style.scss` and separately `examples.scss`.
 The main file uses Sass @use for `@coreui/coreui-pro/scss/coreui`, the CoreUI Chart.js
 stylesheet and vendor adaptations. Keep import order and configure supported Sass
