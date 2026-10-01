@@ -36,6 +36,11 @@ class ValidationTests(unittest.TestCase):
         (self.root/'accidental.txt').write_text('ghp_' + 'a' * 30)
         self.assertTrue(any('possible secret' in p for p in validate(self.root)))
 
+    def test_native_date_input_rejected(self):
+        path = self.root/'skills/coreui-pro/examples/form-page.md'
+        path.write_text(path.read_text() + '\n```vue\n<template><CFormInput type="date" /></template>\n```\n')
+        self.assertTrue(any('native date/time input' in p for p in validate(self.root)))
+
     def test_overlap_detection(self):
         template = Path(self.temp.name)/'private-template'
         (template/'src').mkdir(parents=True)

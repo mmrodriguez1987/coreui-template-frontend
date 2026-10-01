@@ -108,6 +108,13 @@ def validate(root, template=None):
             if not target.is_relative_to(root): errors.append(f'link escapes repository: {relative}')
             elif not target.exists(): errors.append(f'broken link in {relative}: {destination}')
             else: graph[path].append(target)
+    native_date = re.compile(r'<(?:input|CFormInput)\b[^>]*\btype=["\'](?:date|time|datetime-local|month|week)["\']', re.I)
+    for path, text in texts.items():
+        if path.suffix != '.md' or not path.is_relative_to(skill): continue
+        for block in re.findall(r'```(?:vue|html|js)\n(.*?)```', text, flags=re.S):
+            if native_date.search(block):
+                errors.append(f'native date/time input in skill code: {path.relative_to(root)}')
+                break
     reachable = set()
     queue = [entry]
     while queue:

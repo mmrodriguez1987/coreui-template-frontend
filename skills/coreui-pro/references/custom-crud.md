@@ -34,6 +34,9 @@ shared controls and services. Reuse an existing toolbar when one exists in the t
 If several modules need the same new toolbar, extract a small shared component with
 filter/action slots; do not invent a universal CRUD engine or copy the whole page.
 
+The full toolbar catalogue, quick-filter chips, view switch, sorting and state order
+are in [list-views.md](list-views.md); the [list example](../examples/list-page.md) shows them together.
+
 ## Compose the requested screen
 
 Maintain common toolbar placement, field sizes, spacing, reset behavior, result count,

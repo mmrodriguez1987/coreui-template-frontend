@@ -10,11 +10,13 @@ configured. An existing application may have a schema or form wrapper: reuse tha
 | Long text | CFormTextarea |
 | Simple single choice | CFormSelect with stable option values |
 | Rich/multiple choice | CMultiSelect or CAutocomplete; inspect value/event contract |
+| Tags / free tokens | CChipInput |
+| Score / range | CRating, CRangeSlider |
 | Boolean | CFormCheck or CFormSwitch |
 | Mutually exclusive options | CFormCheck type radio, shared name, distinct IDs/values |
 | Prefix/suffix | CInputGroup + CInputGroupText; preserve accessible naming |
 | Floating label | CFormFloating with properly associated label and control |
-| Date/time/range | Installed CDatePicker, CTimePicker, CDateRangePicker |
+| Date/time/range (mandatory) | CDatePicker (`timepicker` for date-time), CTimePicker, CDateRangePicker — never native inputs; see [date-time.md](date-time.md) |
 | Secret or OTP | CPasswordInput / COneTimePassword family |
 | Multi-step workflow | Existing wrapper or installed CStepper; validate before advancing |
 

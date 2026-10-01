@@ -51,3 +51,6 @@ filter card can own search/status/domain filters and sorting outside the table. 
 built-in table search/filter controls off when they duplicate that toolbar. The
 [primary CRUD example](../examples/crud-page.md) uses server paging and custom cells;
 the small local table example is an alternative for complete local datasets only.
+
+For primary module lists (toolbar controls, quick-filter chips, grid/table switch,
+external column sorting and state order) read [list-views.md](list-views.md).

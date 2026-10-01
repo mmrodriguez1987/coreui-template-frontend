@@ -1,5 +1,9 @@
 # Component selection and interaction contracts
 
+For the full inventory (base components, forms, icons, widgets, smart table, charts,
+extras, plugins and apps) see [component-catalog.md](component-catalog.md); for the
+template's look see [visual-design.md](visual-design.md).
+
 The following families were observed in the licensed Vue template. Verify exports
 and contracts against the target's installed `@coreui/vue-pro`; availability varies
 across versions. A family name here is not a promise that every prop exists everywhere.
@@ -12,7 +16,8 @@ across versions. A family name here is not a promise that every prop exists ever
 | Plain table | CTable and head/body/row/cell components | Semantic data; responsive overflow |
 | Interactive data grid | CSmartTable | Built-in filters/sorting/paging; see tables reference |
 | Form | CForm and CFormInput/Select/Textarea/Check/Switch | Accessible labels and actual model bindings |
-| Rich control | CMultiSelect, CAutocomplete, CDatePicker, CDateRangePicker, CTimePicker | Inspect emitted values and locale/date contract |
+| Rich control | CMultiSelect, CAutocomplete, CChipInput, CRating, CRangeSlider | Inspect emitted values; CMultiSelect has no v-model |
+| Date/time | CDatePicker (`timepicker`), CDateRangePicker, CTimePicker | Mandatory over native inputs; see [date-time.md](date-time.md) |
 | Password/OTP | CPasswordInput, COneTimePassword, COneTimePasswordInput | UI controls do not implement authentication |
 | Modal | CModal, CModalHeader/Title/Body/Footer | Controlled visible state and close handling |
 | Feedback | CAlert, CAlertHeading, CFormFeedback | Persistent request/field errors remain visible |
